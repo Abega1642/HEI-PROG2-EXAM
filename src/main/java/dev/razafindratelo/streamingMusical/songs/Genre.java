@@ -10,5 +10,6 @@ public enum Genre {
     ZOUK,
     SALEGY,
     ROCK,
-    HEAVY_META
+    HEAVY_METAL,
+    COUNTRY
 }
