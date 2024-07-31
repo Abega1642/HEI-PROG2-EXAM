@@ -1,5 +1,6 @@
 package dev.razafindratelo.streamingMusical.user;
 
+import dev.razafindratelo.streamingMusical.songSet.Album;
 import dev.razafindratelo.streamingMusical.songSet.Like;
 import dev.razafindratelo.streamingMusical.songSet.PlayList;
 import dev.razafindratelo.streamingMusical.songs.Genre;
@@ -27,13 +28,35 @@ public class User {
         this.favoritePlayLists = new ArrayList<>();
     }
 
+    public void addToPlayList(Song song, PlayList playList) {
+        List<Song> newList = playList.getSongList();
+        newList.add(song);
+        playList.setSongList(newList);
+    }
+
+    public void addToPlayList(Album album, PlayList playList) {
+        List<Song> newList = playList.getSongList();
+        newList.addAll(album.getSongList());
+        playList.setSongList(newList);
+    }
+
+    public void removeById(String id, PlayList playList) {
+        List<Song> newList = playList.getSongList()
+                .stream()
+                .filter(song -> song.getId() != id)
+                .toList();
+        playList.setSongList(newList);
+    }
+
     public void like(PlayList playList) {
         if(playList.getLike() == Like.NO_LIKE) {
             playList.setLike(Like.LIKED);
+            playList.incrementNumberOfLikes();
             favoritePlayLists.add(playList);
         } else {
             playList.setLike(Like.NO_LIKE);
             favoritePlayLists.remove(playList);
+            playList.incrementNumberOfLikes();
         }
     }
 
@@ -41,10 +64,11 @@ public class User {
         PlayList newPlayList = new PlayList(
                 "NewOne",
                 "New playlist");
+
         for(Song song : playlist.getSongList()) {
             for(Genre genre : genres) {
                 if(!song.getGenre().equals(genre)) {
-                    newPlayList.addToPlayList(song);
+                    newPlayList.getSongList().add(song);
                 }
             }
         }
@@ -59,5 +83,9 @@ public class User {
             }
         }
         return count;
+    }
+
+    public int getTotalLike(PlayList playList){
+        return playList.getNumberOfLikes();
     }
 }
