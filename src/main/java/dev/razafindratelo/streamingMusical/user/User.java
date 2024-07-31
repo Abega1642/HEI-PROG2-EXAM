@@ -88,7 +88,7 @@ public class User {
         return count;
     }
 
-    public int getTotalLike(PlayList playList){
+    public int getTotalLikes(PlayList playList){
         return playList.getNumberOfLikes();
     }
 
