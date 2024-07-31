@@ -1,4 +1,4 @@
-package dev.razafindratelo.streamingMusical;
+package dev.razafindratelo.streamingMusical.songSet;
 
 public enum Like {
     LIKED,

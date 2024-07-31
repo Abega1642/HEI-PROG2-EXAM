@@ -1,4 +1,4 @@
-package dev.razafindratelo.streamingMusical;
+package dev.razafindratelo.streamingMusical.Artists;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,6 @@
-package dev.razafindratelo.streamingMusical;
+package dev.razafindratelo.streamingMusical.songSet;
+
+import dev.razafindratelo.streamingMusical.songs.Song;
 
 import java.time.LocalDate;
 import java.util.List;

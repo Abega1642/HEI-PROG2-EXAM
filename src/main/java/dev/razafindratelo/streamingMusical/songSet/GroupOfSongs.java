@@ -1,5 +1,6 @@
-package dev.razafindratelo.streamingMusical;
+package dev.razafindratelo.streamingMusical.songSet;
 
+import dev.razafindratelo.streamingMusical.songs.Song;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

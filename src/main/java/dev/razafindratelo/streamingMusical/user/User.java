@@ -1,4 +1,4 @@
-package dev.razafindratelo.streamingMusical;
+package dev.razafindratelo.streamingMusical.user;
 
 public class User {
 }
