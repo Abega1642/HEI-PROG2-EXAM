@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public abstract class Artist {
-    private String id;
-    private String sceneName;
-    private int beginYear;
-    private String Nationality;
+    protected String id;
+    protected String sceneName;
+    protected int beginYear;
+    protected String Nationality;
 }
