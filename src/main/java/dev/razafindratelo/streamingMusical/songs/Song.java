@@ -5,6 +5,7 @@ import dev.razafindratelo.streamingMusical.songSet.Album;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.Duration;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @AllArgsConstructor
+@ToString
 public class Song {
     private String id;
     private String title;

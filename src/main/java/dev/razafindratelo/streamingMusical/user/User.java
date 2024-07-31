@@ -7,12 +7,15 @@ import dev.razafindratelo.streamingMusical.songs.Genre;
 import dev.razafindratelo.streamingMusical.songs.Song;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
+@ToString
 public class User {
     private String id;
     private String username;
@@ -87,5 +90,18 @@ public class User {
 
     public int getTotalLike(PlayList playList){
         return playList.getNumberOfLikes();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(playLists, user.playLists) && Objects.equals(favoritePlayLists, user.favoritePlayLists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, email, playLists, favoritePlayLists);
     }
 }
