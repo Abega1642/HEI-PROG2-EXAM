@@ -1,6 +1,6 @@
 1-	L'annotation @Override est une annotation signifiant une ré-écriture ou bien ré-implémentation d'une méthode.
 
-2-	On a besoin de redéfinir "equals" et "hashcode" car lors d'une comparaison de deux objets si on ne redéfini pas la ces méthodes ils auront une définition par défaut qui ne satisfait pas à nos attentes. Donc lors des comparaison.
+2-	On a besoin de redéfinir "equals" et "hashcode" car lors d'une comparaison de deux objets si on ne redéfini pas la ces méthodes ils auront une définition par défaut qui ne satisfait pas à nos attentes. Donc on spécifie souvent nos critères de comparaisons.
 
 3-  Le polymorphisme statique est est une surchage d'une méthode. Autrement dit c'est le fait qu'une méthode a plusieur implémentation (plusieurs forme) mais avec des signatures différentes.
     Par exemple :
