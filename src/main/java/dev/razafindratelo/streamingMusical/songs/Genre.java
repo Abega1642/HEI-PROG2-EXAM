@@ -11,5 +11,6 @@ public enum Genre {
     SALEGY,
     ROCK,
     HEAVY_METAL,
-    COUNTRY
+    COUNTRY,
+    BAGASY
 }

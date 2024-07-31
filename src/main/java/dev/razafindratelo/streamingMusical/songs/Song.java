@@ -13,7 +13,6 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @ToString
 public class Song {
     private String id;
@@ -22,6 +21,27 @@ public class Song {
     private List<Genre> genre;
     private Artist artist;
     private Album album;
+    private String type;
+
+    public Song(String id, String title, Duration duration, List<Genre> genre, Artist artist, Album album) {
+        this.id = id;
+        this.title = title;
+        this.duration = duration;
+        this.genre = genre;
+        this.artist = artist;
+        this.album = album;
+        this.type = "";
+    }
+
+    public Song(String id, String title, Duration duration, List<Genre> genre, Artist artist) {
+        this.id = id;
+        this.title = title;
+        this.duration = duration;
+        this.genre = genre;
+        this.artist = artist;
+        this.album = null;
+        this.type = "SINGLE";
+    }
 
     @Override
     public boolean equals(Object o) {
